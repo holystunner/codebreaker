@@ -751,6 +751,16 @@ Enter D for done, or just press Enter to continue hacking:"""
         decrypted = nullCipher.decryptMessage('5031', encrypted)
         self.assertEqual(FOX_MESSAGE, decrypted)
     """
+
+    def test_messageDecoderModule(self):
+        import messageDecoder
+        
+        # Test the specific message from the problem statement
+        encrypted_message = "u'rereadingthis,you'ureontosomethingdon'"
+        expected_decoded = "you're reading this, you're onto something don't"
+        
+        decoded = messageDecoder.decode_message(encrypted_message)
+        self.assertEqual(decoded, expected_decoded)
 if __name__ == '__main__':
     TEST_ALL = True
 
